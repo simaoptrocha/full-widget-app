@@ -1,5 +1,6 @@
 {
-  "name": "sdk",
+  "name": "@simaoptrocha/try-now-sdk",
+  "private": false,
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
