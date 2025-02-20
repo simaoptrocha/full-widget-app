@@ -1,7 +1,7 @@
 {
-  "name": "try-now-fe",
+  "name": "@simaoptrocha/try-now-fe",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -55,6 +55,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0"
   }
 }
