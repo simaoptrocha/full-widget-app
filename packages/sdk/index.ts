@@ -13,7 +13,7 @@ declare global {
 window.SimpleWidgetLoader = window.SimpleWidgetLoader || {};
 // ${process?.env?.DEPLOYED_URL}
 function constructUrl(options: any): string {
-  const baseUrl = 'https://patient-humpback-endless.ngrok-free.app/index.js';
+  const baseUrl = 'https://main.d2a9fj2wdht669.amplifyapp.com';
   const params = new URLSearchParams();
 
   if (options?.text) {
