@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boldText {
+  font-weight: 700;
+  font-size: 0.88em;
+}
+
+.walletInfoHolder {
+  display: flex;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  padding: 15px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.chainLogo {
+  width: 42px;
+  height: 42px;
+}
+
+.walletInfoTextContainer {
+  margin-left: 10px;
+}
+
+.chainName {
+  font-size: 0.75em;
+}
+
+.walletAddress {
+  margin-top: 5px;
+}
+
+.infoElement {
+  margin-bottom: 24px;
+}
+
+.infoElementLabel {
+  margin-bottom: 5px;
+}

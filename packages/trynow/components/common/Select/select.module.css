@@ -1,0 +1,110 @@
+.container {
+  flex: 1;
+}
+
+.modalContainer {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 48px 48px;
+  background-color: #fff;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.top {
+  margin-bottom: 20px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 32px;
+}
+
+.close {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.listContainer {
+  position: relative;
+  overflow-x: hidden;
+  flex: 1;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.caret {
+  transform: rotate(-90deg);
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectedInput {
+  min-height: 20px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectedInput.placeholder {
+  color: #757575;
+}
+
+.selectedInput::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('/icons/caret.svg') center no-repeat;
+  opacity: 0.5;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.88em;
+  line-height: 140%;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoIcon {
+  width: 20px;
+  height: 20px;
+  background-color: #1ff;
+  background: url('/icons/info.svg') center no-repeat;
+  cursor: pointer;
+}
+
+.tooltipText {
+  color: #111213;
+  border: 0;
+  padding: 12px;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+}

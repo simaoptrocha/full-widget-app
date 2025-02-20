@@ -1,0 +1,139 @@
+.main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.contentContainer {
+  padding: 2vh 2vw;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(71.79deg, #ffffff 52.46%, #e8e8e8 110.21%);
+}
+
+.backgroundClouds {
+  position: relative;
+}
+
+.cloud {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@for $i from 1 through 5 {
+  $translatex: random(400) - 200;
+  $translatey: random(400) - 200;
+  $animationSpeed: random(50) + 50;
+  @include keyframes(animate-#{$i}) {
+    50% {
+      transform: translate(#{$translatex}px, #{$translatey}px);
+    }
+  }
+  .cloud:nth-child(#{$i}) {
+    @include animate(animate-#{$i}, #{$animationSpeed}s, linear, infinite);
+  }
+}
+
+.centralContainer {
+  display: flex;
+  border-left: 24px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+}
+
+.innerCentralContainer {
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  min-height: 672px;
+  transform: translate(0);
+  transform-style: preserve-3d;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+}
+
+.paddedContainer {
+  max-width: 680px;
+  position: relative;
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bottomElementContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  transform: translate3d(0px, 0px, 0px);
+  width: 100%;
+}
+
+.bottomElement {
+  font-size: 0.88em;
+  text-align: center;
+  max-width: 300px;
+}
+
+.bottomElement a {
+  color: #8d1bf1;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .contentContainer {
+    margin: 1vh 3vw;
+    height: 100vh;
+  }
+  .centralContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .innerCentralContainer {
+    /* min-height: initial; */
+    width: 100%;
+    border-radius: 0px;
+  }
+  .innerCentralContainer::before {
+    background: none;
+  }
+
+  .bottomElement {
+    margin-top: 24px;
+  }
+
+  .background,
+  .backgroundClouds,
+  .cloud {
+    display: none;
+  }
+}

@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menuItem {
+  margin-right: 20px;
+}
+
+.menuText {
+  opacity: 0.5;
+}
+
+.ethMenu {
+  display: flex;
+  flex-direction: row;
+}
+.networkSelector {
+  border-radius: 25px;
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  appearance: none;
+  overflow: visible;
+}
+.networkLogo {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 25px;
+}
+
+.networkListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.networkName {
+  font-size: 0.9em;
+}
+
+.walletInfo {
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.menuItem a {
+  color: #000;
+}
+
+.placeholderInitial {
+  display: none;
+}
+.placeholderFull {
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    justify-content: space-between;
+  }
+  .hidable {
+    display: none;
+  }
+  .greyBackground {
+    background-color: #f3f3f3;
+  }
+
+  .networkSelector .networkName {
+    display: none;
+  }
+  .networkSelector .networkLogo {
+    margin-right: 0px;
+  }
+
+  .walletInfo {
+    background-color: #000;
+  }
+  .placeholderInitial {
+    text-transform: uppercase;
+    display: block;
+  }
+  .placeholderFull {
+    display: none;
+  }
+  .menuItem {
+    margin-right: 0px;
+    font-size: 0.8em;
+  }
+  .menuItems {
+    gap: 10px;
+  }
+  .logo {
+    width: 95px;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .networkLogo {
+    width: 15px;
+    height: 15px;
+  }
+  .networkLogo img {
+    width: 15px;
+    height: 15px;
+  }
+}

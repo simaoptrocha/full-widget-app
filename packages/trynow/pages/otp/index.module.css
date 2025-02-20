@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+  margin-top: 60px;
+}
+
+.textContainer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.codeInputContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.codeInputBox {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 150px;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+
+.codeInputBox:focus {
+  border-color: #8d1bf1;
+  box-shadow: 0 0 5px rgba(141, 27, 241, 0.5);
+}
+
+.clickText {
+  margin-top: 15px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.clickText:hover {
+  opacity: 0.6;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorText {
+  color: #f00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loadingContainer{
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 400px) {
+  .codeInputContainer {
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .codeInputBox {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+}

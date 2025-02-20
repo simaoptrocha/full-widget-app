@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+  margin-top: 30px;
+}
+
+.gradientContainer {
+  margin-top: 20px;
+  background: linear-gradient(83.6deg, #8d1bf1 -13.7%, #e01668 55.18%, #ec781f 124.06%);
+  border-radius: 8px;
+  color: #fff;
+  padding: 20px 15px;
+  line-height: 1.4em;
+  font-size: 0.88em;
+  font-weight: 700;
+}
+
+.walletAddressContainer {
+  display: flex;
+  padding: 15px;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  flex-direction: row;
+  margin: 10px 0px;
+}
+
+.walletAddressTextContainer {
+  font-size: 1em;
+}
+.walletAddressDescription {
+  font-size: 0.75em;
+  margin-bottom: 5px;
+}
+
+.walletChainLogo {
+  margin-right: 10px;
+}
+
+.boldText {
+  font-weight: 700;
+  font-size: 0.88em;
+}
+
+.bottomText {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorText {
+  color: #f00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.walletAddress {
+  word-break: break-all;
+}

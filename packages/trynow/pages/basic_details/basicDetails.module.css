@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .nonEditableInput {
+    background-color: #f5f5f5; /* Light gray background for non-editable */
+    color: #888; /* Gray text to indicate it's non-editable */
+    cursor: not-allowed; /* Cursor to indicate it's read-only */
+  }
+  
+  .formInput {
+    margin-bottom: 12px;
+  }
+
+  .groupedInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px; /* Space between the fields */
+    width: 100%;
+}
+
+.equalWidth {
+    flex: 1; /* Ensures both elements take equal space */
+    width: 50%;
+}
+
+  .wideInput {
+    flex: 1; /* Makes both fields take up equal space */
+    min-width: 50%; /* Ensures they don’t become too small */
+  }
+  
+  .listElement {
+    display: flex;
+    margin: 18px 0px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .flagImage {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .referralDescription {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #c4c4c4;
+    margin-bottom: 32px;
+  }
+  
+  .error {
+    color: #ff0000;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0px 20px;
+    word-break: break-all;
+  }
+  

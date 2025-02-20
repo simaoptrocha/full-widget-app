@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.description {
+  text-align: center;
+  min-height: 300px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  line-height: 2em;
+}
+
+.boldText {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.header {
+  margin-top: 20px;
+  height: 120px;
+  background: url('/images/flying_bills.png') center no-repeat;
+  margin-bottom: 40px;
+}
+
+.spacer {
+  width: 100%;
+}

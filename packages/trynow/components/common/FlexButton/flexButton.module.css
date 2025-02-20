@@ -1,0 +1,17 @@
+.button {
+  border-radius: 30px;
+  padding: 14px 20px;
+  border: 0;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+.standardColor {
+  color: #fff;
+  background-color: #000;
+}
+
+.invertColor {
+  background-color: #fff;
+  color: #000;
+}

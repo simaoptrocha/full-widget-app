@@ -1,0 +1,48 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.88em;
+  line-height: 1.4em;
+  margin: 10px 0px;
+}
+
+.input {
+  display: block;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1em;
+  width: calc(100% - 32px);
+  flex: 1;
+  color: inherit;
+}
+
+.input::placeholder {
+  color: #888989;
+}
+
+.input.readOnly {
+  background-color: #f5f5f5; /* Grey background for read-only state */
+  color: #888; /* Grey text */
+  cursor: not-allowed; /* Indicate non-interactivity */
+}
+
+.input[type='number'] {
+  -moz-appearance: textfield;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 0.75em;
+  font-weight: 500;
+}
