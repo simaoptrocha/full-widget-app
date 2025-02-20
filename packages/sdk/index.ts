@@ -13,7 +13,7 @@ declare global {
 window.SimpleWidgetLoader = window.SimpleWidgetLoader || {};
 // ${process?.env?.DEPLOYED_URL}
 function constructUrl(options: any): string {
-  const baseUrl = 'https://main.d2a9fj2wdht669.amplifyapp.com';
+  const baseUrl = 'https://10e4-2001-8a0-f421-c00-9133-2288-5e2e-c112.ngrok-free.app/index.js';
   const params = new URLSearchParams();
 
   if (options?.text) {
