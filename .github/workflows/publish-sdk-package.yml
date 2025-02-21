@@ -1,11 +1,6 @@
 name: Publish SDK Package
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  #   tags:
-  #     - "v*.*.*" 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -42,9 +37,17 @@ jobs:
           cd packages/sdk
           npm run build
 
+      - name: Setup npm authentication
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGE_TOKEN }}" >> ~/.npmrc
+          echo "@simaoptrocha:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+
       - name: Release & Publish Package
         run: |
           cd packages/sdk
           npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
+      - name: Clean up .npmrc
+        run: rm -f ~/.npmrc
