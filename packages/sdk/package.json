@@ -1,12 +1,12 @@
 {
   "name": "@simaoptrocha/try-now-sdk",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.ts",
   "scripts": {
     "build": "npx tsc",
-    "release": "standard-version --release-as patch && git push --follow-tags && npm publish --access public"
+    "release": "git push --follow-tags && npm publish --access public"
   },
   "keywords": [],
   "author": "",
