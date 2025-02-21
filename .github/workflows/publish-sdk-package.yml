@@ -20,10 +20,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # - name: Setup Git User Identity
-      #   run: |
-      #     git config --global user.email "simaoptrocha@gmail.com"
-      #     git config --global user.name "Simao"
+      - name: Setup Git User Identity
+        run: |
+          git config --global user.email "simaoptrocha@gmail.com"
+          git config --global user.name "Simao"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
