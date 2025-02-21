@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.24](https://github.com/simaoptrocha/full-widget-app/compare/v1.0.23...v1.0.24) (2025-02-21)
+
 ### [1.0.23](https://github.com/simaoptrocha/full-widget-app/compare/v1.0.21...v1.0.23) (2025-02-21)
 
 ### [1.0.21](https://github.com/simaoptrocha/full-widget-app/compare/v1.0.17...v1.0.21) (2025-02-21)
