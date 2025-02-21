@@ -1,13 +1,15 @@
 {
   "name": "trynow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter ./packages/sdk build && pnpm --filter ./packages/trynow dev & pnpm --filter ./packages/demo dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "release": "standard-version",
+    "publish": "npm publish --access public"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
+    "standard-version": "^9.5.0",
     "typescript-eslint": "^8.23.0"
   }
 }
