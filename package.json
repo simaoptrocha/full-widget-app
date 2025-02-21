@@ -1,6 +1,6 @@
 {
   "name": "trynow",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,8 @@
     "prettier": "^3.4.2",
     "standard-version": "^9.5.0",
     "typescript-eslint": "^8.23.0"
+  },
+  "dependencies": {
+    "user": "^0.0.0"
   }
 }
