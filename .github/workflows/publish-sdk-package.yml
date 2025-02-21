@@ -42,6 +42,28 @@ jobs:
           cd packages/sdk
           npm run build
 
+      - name: Debug Package Token
+        run: echo "PACKAGE_TOKEN is: ${{ secrets.PACKAGE_TOKEN }}"
+        env:
+          PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
+      - name: Setup npm authentication
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGE_TOKEN }}" > packages/sdk/.npmrc
+          echo "@simaoptrocha:registry=https://npm.pkg.github.com/" >> packages/sdk/.npmrc
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Release & Publish Package
+        run: |
+          cd packages/sdk
+          npm config list  # Show npm config for debugging
+          npm whoami       # Show authenticated user
+          npm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
       - name: Release & Publish Package
         run: |
           cd packages/sdk
