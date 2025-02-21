@@ -1,11 +1,6 @@
 name: Publish SDK Package
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  #   tags:
-  #     - "v*.*.*" 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -41,11 +36,6 @@ jobs:
         run: |
           cd packages/sdk
           npm run build
-
-      - name: Debug Package Token
-        run: echo "PACKAGE_TOKEN is ${{ secrets.PACKAGE_TOKEN }}"
-        env:
-          PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 
       - name: Setup npm authentication
         run: |
