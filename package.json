@@ -1,6 +1,6 @@
 {
   "name": "trynow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "release": "standard-version",
-    "publish": "npm publish --access public"
+    "release": "standard-version --release-as patch && git push --follow-tags && npm run publish"
   },
   "keywords": [],
   "author": "",
