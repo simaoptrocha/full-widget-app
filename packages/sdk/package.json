@@ -1,7 +1,7 @@
 {
   "name": "@simaoptrocha/try-now-sdk",
   "private": false,
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "",
   "main": "index.ts",
   "scripts": {
