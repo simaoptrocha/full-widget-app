@@ -1,11 +1,11 @@
 name: Publish SDK Package
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - "v*.*.*" 
+  # push:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - "v*.*.*" 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
