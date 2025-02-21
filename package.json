@@ -7,9 +7,7 @@
     "dev": "pnpm --filter ./packages/sdk build && pnpm --filter ./packages/trynow dev & pnpm --filter ./packages/demo dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "release": "standard-version --release-as patch && git push --follow-tags && npm run publish",
-    "publish": "npm publish --access public"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
