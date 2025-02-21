@@ -1,24 +1,24 @@
-name: Publish NPM Package
+name: Release & Publish NPM Package
 
 on:
   push:
     branches:
       - main
-    tags:
-      - "v*.*.*" 
-  workflow_dispatch: 
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
-      packages: write
+      contents: write  # Required to push tags & commits
+      packages: write  # Required to publish to GitHub Packages
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures tags are fetched
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -30,8 +30,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Package
-        run: npm run build
+      - name: Bump Version & Push Tags
+        run: |
+          npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Package
         run: npm publish --access public
