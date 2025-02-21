@@ -58,8 +58,6 @@ jobs:
       - name: Release & Publish Package
         run: |
           cd packages/sdk
-          npm config list  # Show npm config for debugging
-          npm whoami       # Show authenticated user
           npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
