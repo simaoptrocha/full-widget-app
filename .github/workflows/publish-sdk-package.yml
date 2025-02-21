@@ -1,6 +1,11 @@
 name: Publish SDK Package
 
 on:
+  # push:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - "v*.*.*" 
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -20,7 +25,7 @@ jobs:
           git config --global user.email "simaoptrocha@gmail.com"
           git config --global user.name "Simao"
 
-      - name: Setup Node.jsx
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -37,27 +42,9 @@ jobs:
           cd packages/sdk
           npm run build
 
-      - name: Debug Package Token
-        run: echo "PACKAGE_TOKEN is: ${{ secrets.PACKAGE_TOKEN }}"
-        env:
-          PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
-
-      - name: Setup npm authentication
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGE_TOKEN }}" > packages/sdk/.npmrc
-          echo "@simaoptrocha:registry=https://npm.pkg.github.com/" >> packages/sdk/.npmrc
-
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Release & Publish Package
         run: |
           cd packages/sdk
-          npm config list  # Show npm config for debugging
-          npm whoami       # Show authenticated user
           npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
-
-      - name: Clean up .npmrc
-        run: rm -f packages/sdk/.npmrc
