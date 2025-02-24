@@ -67,7 +67,7 @@ export class UnblockApi {
     //   default:
     //     this.baseUrl = 'https://k47ghkrnoj.execute-api.eu-west-2.amazonaws.com';
     // }
-    this.baseUrl = 'https://k7rtugk1re.execute-api.eu-west-1.amazonaws.com/proxy';
+    this.baseUrl =  `${process.env.NEXT_PUBLIC_PROXY_SERVER_URL}`;
   }
 
   async constructRequest(
