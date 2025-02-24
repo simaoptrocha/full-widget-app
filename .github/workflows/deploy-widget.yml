@@ -24,5 +24,8 @@ jobs:
       - name: Change directory to app root
         run: cd packages/trynow
 
+      - name: Pull Amplify Backend
+        run: amplify pull --app-id d1l3qlrynrui0p
+
       - name: Deploy to Amplify
         run: amplify publish
