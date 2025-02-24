@@ -21,15 +21,25 @@ jobs:
       - name: Install Amplify CLI
         run: npm install -g @aws-amplify/cli
 
-      - name: Pull Amplify Backend
+      - name: Load Amplify Environment Variables
         run: |
-          cd packages/trynow
-          amplify pull --app-id d1l3qlrynrui0p --yes
+          # Check if amplify.env exists, and load it
+          if [ -f amplify.env ]; then
+            source amplify.env
+            echo "AMPLIFY_MONOREPO_APP_ROOT=$AMPLIFY_MONOREPO_APP_ROOT" >> $GITHUB_ENV
+            echo "AMPLIFY_APP_ID=$AMPLIFY_APP_ID" >> $GITHUB_ENV
+            echo "AMPLIFY_DIFF_DEPLOY=$AMPLIFY_DIFF_DEPLOY" >> $GITHUB_ENV
+          else
+            echo "amplify.env file not found, skipping loading environment variables."
+          fi
+
+      - name: Pull Amplify Backend
+        run: amplify pull --app-id $AMPLIFY_APP_ID --env $AMPLIFY_ENV --yes
 
       - name: Verify Amplify Project Files
-        run: ls -R packages/trynow/amplify/
+        run: ls -R $AMPLIFY_MONOREPO_APP_ROOT/amplify/ || echo "Amplify directory not found"
 
       - name: Deploy to Amplify
         run: |
-          cd packages/trynow
+          cd $AMPLIFY_MONOREPO_APP_ROOT
           amplify publish
