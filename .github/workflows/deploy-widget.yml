@@ -21,11 +21,15 @@ jobs:
       - name: Install Amplify CLI
         run: npm install -g @aws-amplify/cli
 
-      - name: Change directory to app root
-        run: cd packages/trynow
-
       - name: Pull Amplify Backend
-        run: amplify pull --app-id d1l3qlrynrui0p
+        run: |
+          cd packages/trynow
+          amplify pull --app-id d1l3qlrynrui0p --yes
+
+      - name: Verify Amplify Project Files
+        run: ls -R packages/trynow/amplify/
 
       - name: Deploy to Amplify
-        run: amplify publish
+        run: |
+          cd packages/trynow
+          amplify publish
