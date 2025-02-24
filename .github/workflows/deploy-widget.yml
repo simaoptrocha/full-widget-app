@@ -6,11 +6,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: dev  
+    environment: production  # Reference to the environment you created
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Show Webhook URL for Debugging
+        run: |
+          echo "Webhook URL: $DEPLOYMENT_WEBHOOK_URL"  # Debug output (remove in production)
+      
       - name: Trigger Amplify Deployment via Webhook
         run: |
+          echo "Sending POST request to: $DEPLOYMENT_WEBHOOK_URL"  # Debug
           curl -X POST "$DEPLOYMENT_WEBHOOK_URL"
