@@ -6,11 +6,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: dev  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Trigger Amplify Deployment via Webhook
         run: |
-          curl -X POST "https://webhooks.amplify.eu-west-1.amazonaws.com/prod/webhooks?id=7d7773bc-5582-4576-818f-6d87ee6439a2&token=WcAbpSNOQUkVJYpFMUhw8AkfR3nSz0oyRfxvh4vgLc"
+          curl -X POST "$DEPLOYMENT_WEBHOOK_URL"
