@@ -1,8 +1,8 @@
-name: Deploy to Amplify
+name: Trigger Amplify Webhook
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,35 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Install Amplify CLI
-        run: npm install -g @aws-amplify/cli
-
-      - name: Load Amplify Environment Variables
+      - name: Trigger Amplify Deployment via Webhook
         run: |
-          # Check if amplify.env exists, and load it
-          if [ -f amplify.env ]; then
-            source amplify.env
-            echo "AMPLIFY_MONOREPO_APP_ROOT=$AMPLIFY_MONOREPO_APP_ROOT" >> $GITHUB_ENV
-            echo "AMPLIFY_APP_ID=$AMPLIFY_APP_ID" >> $GITHUB_ENV
-            echo "AMPLIFY_DIFF_DEPLOY=$AMPLIFY_DIFF_DEPLOY" >> $GITHUB_ENV
-          else
-            echo "amplify.env file not found, skipping loading environment variables."
-          fi
-
-      - name: Pull Amplify Backend
-        run: amplify pull --app-id $AMPLIFY_APP_ID --env $AMPLIFY_ENV --yes
-
-      - name: Verify Amplify Project Files
-        run: ls -R $AMPLIFY_MONOREPO_APP_ROOT/amplify/ || echo "Amplify directory not found"
-
-      - name: Deploy to Amplify
-        run: |
-          cd $AMPLIFY_MONOREPO_APP_ROOT
-          amplify publish
+          curl -X POST "https://webhooks.amplify.eu-west-1.amazonaws.com/prod/webhooks?id=7d7773bc-5582-4576-818f-6d87ee6439a2&token=WcAbpSNOQUkVJYpFMUhw8AkfR3nSz0oyRfxvh4vgLc"
